@@ -72,7 +72,7 @@ export default function LoginPage() {
         {isGoogleUser === true && (
           <p className="text-red-500 text-center mb-2">This account was registered with Google. Please login with Google.</p>
         )}
-        <button onClick={handleGoogleLogin} className="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition duration-300 mb-4">Sign in with Google</button>
+        {/* <button onClick={handleGoogleLogin} className="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition duration-300 mb-4">Sign in with Google</button> */}
         {!isGoogleUser && (
           <form className="mt-4" onSubmit={handleLogin}>
             <input type="email" name="email" placeholder="Email" required className="w-full p-3 border rounded-lg mb-3 focus:ring focus:ring-blue-300" />
