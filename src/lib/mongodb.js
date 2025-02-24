@@ -5,7 +5,7 @@ if (!process.env.MONGODB_URI) {
 }
 
 const uri = process.env.MONGODB_URI;
-const options = { useNewUrlParser: true, useUnifiedTopology: true };
+// const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 let client;
 let db;
@@ -13,12 +13,12 @@ let db;
 if (process.env.NODE_ENV === 'development') {
   // Prevent multiple MongoDB connections in development
   if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
+    client = new MongoClient(uri);
     global._mongoClientPromise = client.connect();
   }
   client = await global._mongoClientPromise;
 } else {
-  client = new MongoClient(uri, options);
+  client = new MongoClient(uri);
   await client.connect();
 }
 
